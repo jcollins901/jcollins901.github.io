@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jameson's Portfolio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header { text-align: center; }
+        section { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jameson - Computer Science Professional</h1>
+        <p>Diverse innovator in CS, design, and more. Explore my projects and accomplishments.</p>
+    </header>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><a href="https://github.com/yourusername/project1">Project 1: Description here</a></li>
+            <!-- Add more as you go -->
+        </ul>
+    </section>
+    
+    <section id="accomplishments">
+        <h2>Accomplishments</h2>
+        <p>Awarded XYZ in 2025; Published paper on AI ethics.</p>
+    </section>
+    
+    <section id="photoshop">
+        <h2>Photoshop Work</h2>
+        <img src="example-image.jpg" alt="Photoshop example" width="300">
+        <!-- Upload images to your repo and link them -->
+    </section>
+    
+    <footer>
+        <p>Contact: jameson@email.com | <a href="https://linkedin.com/in/jameson">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
