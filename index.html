@@ -13,14 +13,14 @@
     
     <style>
         :root {
-            --bg-primary:     #ffffff;      /* clean white main bg */
-            --bg-secondary:   #f8f9fa;      /* light gray for cards/sections */
-            --text-primary:   #111111;      /* near-black headings */
-            --text-secondary: #4b5563;      /* medium gray body text */
-            --gray:           #6b7280;      /* neutral gray for subtle elements */
-            --red-accent:     #990000;      /* vibrant, balanced red accent */
-            --red-hover:      #820000;      /* lighter red on hover */
-            --border:         #d1d5db;      /* soft gray borders */
+            --bg-primary:     #ffffff;
+            --bg-secondary:   #f8f9fa;
+            --text-primary:   #111111;
+            --text-secondary: #4b5563;
+            --gray:           #6b7280;
+            --red-accent:     #dc2626;      /* Updated to brighter red for better visibility */
+            --red-hover:      #ef4444;
+            --border:         #d1d5db;
             --shadow:         0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
@@ -50,13 +50,13 @@
         }
         
         header h1 {
-            font-family: 'Archivo Black', sans-serif;  /* Apply only here */
-            font-size: 5rem;                           /* Bigger for impact – adjust as needed */
-            font-weight: 400;                          /* Archivo Black is inherently heavy, no need for bold */
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 5rem;
+            font-weight: 400;
             line-height: 1.1;
             margin-bottom: 0.8rem;
-            color: var(--text-primary);                /* Keeps it consistent with your palette */
-            letter-spacing: -0.02em;                   /* Slight tightening for better look */
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
         
         header p {
@@ -179,19 +179,44 @@
         .photoshop-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--red-accent);
         }
         
         .gallery-item img {
             width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: all 0.4s;
+            height: 220px;
+            object-fit: cover;
+            display: block;
         }
         
-        .gallery-item img:hover {
-            transform: scale(1.03);
-            border-color: var(--red-accent);
+        .gallery-item .item-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .gallery-item h4 {
+            margin: 0.5rem 0;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+        
+        .gallery-item p {
+            font-size: 0.95rem;
+            margin: 0;
         }
         
         .btn {
@@ -327,10 +352,44 @@
         <div class="container">
             <h2>Creative Work (Photoshop & Design)</h2>
             <div class="photoshop-gallery">
-                <div class="gallery-item"><img src="images/design-1.jpg" alt="Photoshop artwork 1"></div>
-                <div class="gallery-item"><img src="images/design-2.jpg" alt="Photoshop artwork 2"></div>
-                <div class="gallery-item"><img src="images/design-3.jpg" alt="Photoshop artwork 3"></div>
-                <div class="gallery-item"><img src="images/design-4.jpg" alt="Photoshop artwork 4"></div>
+                <!-- Your new Indiana artwork added here -->
+                <div class="gallery-item">
+                    <img src="images/indiana.jpg" alt="Indiana-inspired digital artwork – Photoshop creation featuring state elements and Bloomington vibes">
+                    <div class="item-info">
+                        <h4>Indiana</h4>
+                        <p>Photoshop digital illustration blending state map aesthetics, Bloomington landmarks, and creative effects.</p>
+                    </div>
+                </div>
+
+                <!-- Existing placeholders – replace with your other designs -->
+                <div class="gallery-item">
+                    <img src="images/design-1.jpg" alt="Photoshop artwork 1">
+                    <div class="item-info">
+                        <h4>Artwork Title 1</h4>
+                        <p>Short description or year.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/design-2.jpg" alt="Photoshop artwork 2">
+                    <div class="item-info">
+                        <h4>Artwork Title 2</h4>
+                        <p>Short description or year.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/design-3.jpg" alt="Photoshop artwork 3">
+                    <div class="item-info">
+                        <h4>Artwork Title 3</h4>
+                        <p>Short description or year.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/design-4.jpg" alt="Photoshop artwork 4">
+                    <div class="item-info">
+                        <h4>Artwork Title 4</h4>
+                        <p>Short description or year.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
