@@ -218,6 +218,71 @@
             font-size: 0.95rem;
             margin: 0;
         }
+
+        /* Category Folder Navigation */
+        .category-folders {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .folder-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1.2rem 1.6rem;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 120px;
+            font-size: 0.95rem;
+        }
+
+        .folder-btn:hover {
+            border-color: var(--red-accent);
+            background: #fff5f5;
+            transform: translateY(-4px);
+        }
+
+        .folder-btn.active {
+            background: var(--red-accent);
+            color: white;
+            border-color: var(--red-accent);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .folder-icon {
+            font-size: 1.8rem;
+        }
+
+        /* Gallery item animations */
+        .gallery-item {
+            animation: fadeIn 0.4s ease;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
         
         .btn {
             display: inline-block;
@@ -261,6 +326,9 @@
             .nav ul { gap: 1.8rem; font-size: 0.95rem; flex-wrap: wrap; }
             section { padding: 80px 0; }
             h2 { font-size: 2.6rem; }
+            .category-folders { gap: 0.8rem; }
+            .folder-btn { padding: 1rem 1.2rem; min-width: 100px; font-size: 0.85rem; }
+            .folder-icon { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -347,47 +415,162 @@
         </div>
     </section>
 
-    <!-- Photoshop / Design Work -->
+    <!-- Creative Work with Category Folders -->
     <section id="photoshop">
         <div class="container">
             <h2>Creative Work</h2>
-            <div class="photoshop-gallery">
-                <!-- Your new Indiana artwork added here -->
-                <div class="gallery-item">
+            
+            <!-- Category Folder Navigation -->
+            <div class="category-folders">
+                <button class="folder-btn active" data-category="all">
+                    <span class="folder-icon">📁</span>
+                    <span>All Work</span>
+                </button>
+                <button class="folder-btn" data-category="photoshop">
+                    <span class="folder-icon">🎨</span>
+                    <span>Photoshop</span>
+                </button>
+                <button class="folder-btn" data-category="cad">
+                    <span class="folder-icon">🔧</span>
+                    <span>CAD Work</span>
+                </button>
+                <button class="folder-btn" data-category="data-analysis">
+                    <span class="folder-icon">📊</span>
+                    <span>Data Analysis</span>
+                </button>
+                <button class="folder-btn" data-category="illustration">
+                    <span class="folder-icon">✏️</span>
+                    <span>Illustration</span>
+                </button>
+                <button class="folder-btn" data-category="web-design">
+                    <span class="folder-icon">🌐</span>
+                    <span>Web Design</span>
+                </button>
+                <button class="folder-btn" data-category="photography">
+                    <span class="folder-icon">📷</span>
+                    <span>Photography</span>
+                </button>
+                <button class="folder-btn" data-category="motion">
+                    <span class="folder-icon">🎬</span>
+                    <span>Motion Graphics</span>
+                </button>
+                <button class="folder-btn" data-category="branding">
+                    <span class="folder-icon">💼</span>
+                    <span>Branding</span>
+                </button>
+                <button class="folder-btn" data-category="infographics">
+                    <span class="folder-icon">📈</span>
+                    <span>Infographics</span>
+                </button>
+            </div>
+
+            <div class="photoshop-gallery" id="gallery-container">
+                <!-- Photoshop Projects -->
+                <div class="gallery-item" data-category="photoshop">
                     <img src="images/indiana.jpg" alt="Indiana-inspired digital artwork – Photoshop creation featuring state elements and Bloomington vibes">
                     <div class="item-info">
                         <h4>2024-25 Indiana Hoosiers</h4>
                         <p>T-Shirt design for the 2024-2025 basketball season. Made with Adobe Photoshop.</p>
                     </div>
                 </div>
+                <div class="gallery-item" data-category="photoshop">
+                    <img src="images/design-1.jpg" alt="Photoshop digital design 1">
+                    <div class="item-info">
+                        <h4>Design Project 1</h4>
+                        <p>Creative digital design work in Photoshop.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="photoshop">
+                    <img src="images/design-2.jpg" alt="Photoshop digital design 2">
+                    <div class="item-info">
+                        <h4>Design Project 2</h4>
+                        <p>Professional digital artwork created with Adobe Photoshop.</p>
+                    </div>
+                </div>
 
-                <!-- Existing placeholders – replace with your other designs -->
-                <div class="gallery-item">
-                    <img src="images/design-1.jpg" alt="Photoshop artwork 1">
+                <!-- CAD Work -->
+                <div class="gallery-item" data-category="cad">
+                    <img src="images/cad-1.jpg" alt="CAD 3D modeling project 1">
                     <div class="item-info">
-                        <h4>Artwork Title 1</h4>
-                        <p>Short description or year.</p>
+                        <h4>3D Model - Part Design</h4>
+                        <p>Precision engineering model created with SolidWorks/Fusion 360.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/design-2.jpg" alt="Photoshop artwork 2">
+                <div class="gallery-item" data-category="cad">
+                    <img src="images/cad-2.jpg" alt="CAD 3D modeling project 2">
                     <div class="item-info">
-                        <h4>Artwork Title 2</h4>
-                        <p>Short description or year.</p>
+                        <h4>Complex Assembly</h4>
+                        <p>Multi-component CAD assembly with technical drawings.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/design-3.jpg" alt="Photoshop artwork 3">
+
+                <!-- Data Analysis -->
+                <div class="gallery-item" data-category="data-analysis">
+                    <img src="images/data-analysis-1.jpg" alt="Data visualization dashboard">
                     <div class="item-info">
-                        <h4>Artwork Title 3</h4>
-                        <p>Short description or year.</p>
+                        <h4>Interactive Data Dashboard</h4>
+                        <p>Python data analysis visualization with Matplotlib and Plotly.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/design-4.jpg" alt="Photoshop artwork 4">
+                <div class="gallery-item" data-category="data-analysis">
+                    <img src="images/data-analysis-2.jpg" alt="Statistical analysis report">
                     <div class="item-info">
-                        <h4>Artwork Title 4</h4>
-                        <p>Short description or year.</p>
+                        <h4>Statistical Analysis Report</h4>
+                        <p>Data analysis project using pandas and statistical methods.</p>
+                    </div>
+                </div>
+
+                <!-- Illustration -->
+                <div class="gallery-item" data-category="illustration">
+                    <img src="images/illustration-1.jpg" alt="Digital illustration 1">
+                    <div class="item-info">
+                        <h4>Digital Illustration</h4>
+                        <p>Hand-drawn digital art created with digital painting software.</p>
+                    </div>
+                </div>
+
+                <!-- Web Design -->
+                <div class="gallery-item" data-category="web-design">
+                    <img src="images/web-design-1.jpg" alt="Web UI design mockup">
+                    <div class="item-info">
+                        <h4>Website UI Design</h4>
+                        <p>Modern responsive web interface design and UX layout.</p>
+                    </div>
+                </div>
+
+                <!-- Photography -->
+                <div class="gallery-item" data-category="photography">
+                    <img src="images/photography-1.jpg" alt="Photography project 1">
+                    <div class="item-info">
+                        <h4>Photography Collection</h4>
+                        <p>Portfolio of photography work and visual storytelling.</p>
+                    </div>
+                </div>
+
+                <!-- Motion Graphics -->
+                <div class="gallery-item" data-category="motion">
+                    <img src="images/motion-1.jpg" alt="Motion graphics animation preview">
+                    <div class="item-info">
+                        <h4>Motion Graphics Animation</h4>
+                        <p>Animated graphics created with After Effects.</p>
+                    </div>
+                </div>
+
+                <!-- Branding -->
+                <div class="gallery-item" data-category="branding">
+                    <img src="images/branding-1.jpg" alt="Logo and brand identity design">
+                    <div class="item-info">
+                        <h4>Brand Identity Design</h4>
+                        <p>Logo design and complete branding system.</p>
+                    </div>
+                </div>
+
+                <!-- Infographics -->
+                <div class="gallery-item" data-category="infographics">
+                    <img src="images/infographic-1.jpg" alt="Data infographic visualization">
+                    <div class="item-info">
+                        <h4>Information Design</h4>
+                        <p>Complex data presented as compelling infographics.</p>
                     </div>
                 </div>
             </div>
@@ -428,13 +611,42 @@
         </div>
     </footer>
 
-    <!-- Smooth scrolling -->
+    <!-- Smooth scrolling and Gallery Filtering -->
     <script>
+        // Smooth scroll navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
+                });
+            });
+        });
+
+        // Gallery filtering functionality
+        const folderBtns = document.querySelectorAll('.folder-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        folderBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const selectedCategory = this.getAttribute('data-category');
+
+                // Update active button
+                folderBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filter gallery items
+                galleryItems.forEach(item => {
+                    if (selectedCategory === 'all') {
+                        item.classList.remove('hidden');
+                    } else {
+                        const itemCategory = item.getAttribute('data-category');
+                        if (itemCategory === selectedCategory) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    }
                 });
             });
         });
