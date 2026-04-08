@@ -1,692 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jameson - Computer Science professional & creative designer. Showcasing projects, Photoshop artwork, accomplishments and skills.">
-    <title>Jameson | Portfolio and Collection</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-primary:     #ffffff;
-            --bg-secondary:   #f8f9fa;
-            --text-primary:   #111111;
-            --text-secondary: #4b5563;
-            --gray:           #6b7280;
-            --red-accent:     #dc2626;      /* Updated to brighter red for better visibility */
-            --red-hover:      #ef4444;
-            --border:         #d1d5db;
-            --shadow:         0 4px 20px rgba(0, 0, 0, 0.06);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<title>Jameson Collins | Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            background-color: var(--bg-primary);
-        }
-        
-        header {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            text-align: center;
-            padding: 160px 20px 100px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        header h1 {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 5rem;
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 0.8rem;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-        }
-        
-        header p {
-            font-size: 1.4rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-        }
-        
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--bg-primary);
-            box-shadow: var(--shadow);
-            padding: 1.2rem 5%;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-        }
-        
-        .nav a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        .nav a:hover {
-            color: var(--red-accent);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-        
-        section {
-            padding: 120px 0;
-        }
-        
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
-        }
-        
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .skill-card {
-            background: var(--bg-secondary);
-            padding: 1.8rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--red-accent);
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--red-accent);
-        }
-        
-        .project-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-        
-        .project-info {
-            padding: 1.6rem;
-        }
-        
-        .project-info h3 {
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-        }
-        
-        .photoshop-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .gallery-item {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-6px);
-            border-color: var(--red-accent);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .gallery-item .item-info {
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        .gallery-item h4 {
-            margin: 0.5rem 0;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-        }
-        
-        .gallery-item p {
-            font-size: 0.95rem;
-            margin: 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        /* Category Folder Navigation */
-        .category-folders {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-        }
+<style>
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --gray: #555;
+    --accent: #dc2626;
+}
 
-        .folder-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1.2rem 1.6rem;
-            background: var(--bg-secondary);
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            color: var(--text-primary);
-            min-width: 120px;
-            font-size: 0.95rem;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .folder-btn:hover {
-            border-color: var(--red-accent);
-            background: #fff5f5;
-            transform: translateY(-4px);
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--gray);
+}
 
-        .folder-btn.active {
-            background: var(--red-accent);
-            color: white;
-            border-color: var(--red-accent);
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
-        }
+/* NAV */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+}
 
-        .folder-icon {
-            font-size: 1.8rem;
-        }
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
 
-        /* Gallery item animations */
-        .gallery-item {
-            animation: fadeIn 0.4s ease;
-        }
+/* HERO */
+header {
+    text-align: center;
+    padding: 160px 20px;
+}
 
-        .gallery-item.hidden {
-            display: none;
-        }
+header h1 {
+    font-size: 4rem;
+    font-family: 'Archivo Black';
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--red-accent);
-            color: white;
-            padding: 1rem 2.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            transition: all 0.3s;
-        }
-        
-        .btn:hover {
-            background: var(--red-hover);
-            transform: translateY(-2px);
-        }
-        
-        footer {
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            text-align: center;
-            padding: 4rem 0 2rem;
-            border-top: 1px solid var(--border);
-        }
-        
-        .social-links a {
-            color: var(--text-primary);
-            margin: 0 1.2rem;
-            font-size: 1.8rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--red-accent);
-        }
-        
-        @media (max-width: 768px) {
-            header { padding: 120px 15px 80px; }
-            header h1 { font-size: 3.2rem; }
-            .nav ul { gap: 1.8rem; font-size: 0.95rem; flex-wrap: wrap; }
-            section { padding: 80px 0; }
-            h2 { font-size: 2.6rem; }
-            .category-folders { gap: 0.8rem; }
-            .folder-btn { padding: 1rem 1.2rem; min-width: 100px; font-size: 0.85rem; }
-            .folder-icon { font-size: 1.5rem; }
-        }
-    </style>
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: black;
+}
+
+/* REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PROJECTS */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(220,38,38,0.2), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* AI DEMO */
+input {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+}
+
+button {
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* CURSOR GLOW */
+.cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(220,38,38,0.15), transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#photoshop">Design</a></li>
-            <li><a href="#accomplishments">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<div class="cursor-glow"></div>
 
-    <!-- Hero / Home -->
-    <header id="home">
-        <div class="container">
-            <h1>Jameson Collins</h1>
-            <p>Computer Science Professional • Creative Designer • Lifelong Learner</p>
-            <p>Blending code, design, and innovation to build meaningful solutions.</p>
-            <a href="#projects" class="btn">Explore My Work</a>
-        </div>
-    </header>
+<nav>
+<a href="#home">Home</a>
+<a href="#projects">Projects</a>
+<a href="#demo">AI Demo</a>
+<a href="#contact">Contact</a>
+</nav>
 
-    <!-- About -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p class="about-text">
-                I'm a versatile Computer Science graduate with professional experience in software development, 
-                algorithms, and machine learning. Alongside technical work, I have a strong background in digital 
-                art and Photoshop, allowing me to approach problems from both logical and creative perspectives.
-                <br><br>
-                Passionate about AI, web technologies, open-source, and visual storytelling. Always experimenting 
-                with new tools and ideas to create innovative, user-focused experiences.
-            </p>
-        </div>
-    </section>
+<header id="home">
+<h1>Jameson Collins</h1>
+<p>AI • Developer • Designer</p>
+<a href="#projects" class="btn">View Work</a>
+</header>
 
-    <!-- Skills -->
-    <section id="skills">
-        <div class="container">
-            <h2>Core Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><h3>Python / Java</h3><p>Data Structures, Algorithms, Backend</p></div>
-                <div class="skill-card"><h3>Web Development</h3><p>HTML, CSS, JavaScript, React</p></div>
-                <div class="skill-card"><h3>AI & ML</h3><p>PyTorch, scikit-learn, NLP basics</p></div>
-                <div class="skill-card"><h3>Digital Design</h3><p>Photoshop, UI/UX principles</p></div>
-                <div class="skill-card"><h3>Git & GitHub</h3><p>Version control, collaboration</p></div>
-                <div class="skill-card"><h3>Problem Solving</h3><p>Competitive programming, system design</p></div>
-            </div>
-        </div>
-    </section>
+<section class="reveal">
+<h2>About</h2>
+<p style="text-align:center; max-width:600px; margin:auto;">
+I build AI-driven tools and creative digital experiences that combine technology and design.
+</p>
+</section>
 
-    <!-- Projects -->
-    <section id="projects">
-        <div class="container">
-            <h2>Computer Science Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400/dc2626/ffffff?text=AI+Chat+App" alt="AI Chat Application">
-                    <div class="project-info">
-                        <h3>AI-Powered Chat Application</h3>
-                        <p>Real-time messaging app with sentiment analysis using Python & Flask.</p>
-                        <a href="https://github.com/yourusername/ai-chat" class="btn" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400/f8f9fa/111111?text=Finance+Tracker" alt="Personal Finance Tracker">
-                    <div class="project-info">
-                        <h3>Personal Finance Tracker</h3>
-                        <p>Full-stack web app with data visualization using Chart.js and Node.js.</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
+<section id="projects" class="reveal">
+<h2>Projects</h2>
+<div class="projects">
 
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400/4b5563/ffffff?text=ML+Model" alt="Machine Learning Project">
-                    <div class="project-info">
-                        <h3>Machine Learning Model</h3>
-                        <p>Deep learning classification model using PyTorch and scikit-learn.</p>
-                        <a href="#" class="btn">View on GitHub</a>
-                    </div>
-                </div>
+<div class="card">
+<h3>AI Chat App</h3>
+<p>Real-time chat with sentiment analysis.</p>
+</div>
 
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400/111111/ffffff?text=Algorithm+Solver" alt="Algorithm & Data Structures">
-                    <div class="project-info">
-                        <h3>Algorithm & Data Structures</h3>
-                        <p>Competitive programming solutions and algorithm implementations in Java.</p>
-                        <a href="#" class="btn">View on GitHub</a>
-                    </div>
-                </div>
+<div class="card">
+<h3>Finance Tracker</h3>
+<p>Track expenses with visual dashboards.</p>
+</div>
 
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400/6b7280/ffffff?text=Web+App" alt="Web Application">
-                    <div class="project-info">
-                        <h3>Full-Stack Web Application</h3>
-                        <p>Modern React frontend with REST API backend using Node.js and MongoDB.</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
+<div class="card">
+<h3>ML Model</h3>
+<p>Deep learning classification system.</p>
+</div>
 
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400/dc2626/ffffff?text=Open+Source" alt="Open Source Contribution">
-                    <div class="project-info">
-                        <h3>Open Source Contributions</h3>
-                        <p>Active contributor to multiple open-source projects on GitHub.</p>
-                        <a href="#" class="btn">View Profile</a>
-                    </div>
-                </div>
-                
-                <!-- Add your real projects here -->
-            </div>
-        </div>
-    </section>
+</div>
+</section>
 
-    <!-- Creative Work with Category Folders -->
-    <section id="photoshop">
-        <div class="container">
-            <h2>Creative Work</h2>
-            
-            <!-- Category Folder Navigation -->
-            <div class="category-folders">
-                <button class="folder-btn active" data-category="all">
-                    <span class="folder-icon">📁</span>
-                    <span>All Work</span>
-                </button>
-                <button class="folder-btn" data-category="photoshop">
-                    <span class="folder-icon">🎨</span>
-                    <span>Photoshop</span>
-                </button>
-                <button class="folder-btn" data-category="cad">
-                    <span class="folder-icon">🔧</span>
-                    <span>CAD Work</span>
-                </button>
-                <button class="folder-btn" data-category="data-analysis">
-                    <span class="folder-icon">📊</span>
-                    <span>Data Analysis</span>
-                </button>
-                <button class="folder-btn" data-category="illustration">
-                    <span class="folder-icon">✏️</span>
-                    <span>Illustration</span>
-                </button>
-                <button class="folder-btn" data-category="web-design">
-                    <span class="folder-icon">🌐</span>
-                    <span>Web Design</span>
-                </button>
-                <button class="folder-btn" data-category="photography">
-                    <span class="folder-icon">📷</span>
-                    <span>Photography</span>
-                </button>
-                <button class="folder-btn" data-category="motion">
-                    <span class="folder-icon">🎬</span>
-                    <span>Motion Graphics</span>
-                </button>
-                <button class="folder-btn" data-category="branding">
-                    <span class="folder-icon">💼</span>
-                    <span>Branding</span>
-                </button>
-                <button class="folder-btn" data-category="infographics">
-                    <span class="folder-icon">📈</span>
-                    <span>Infographics</span>
-                </button>
-            </div>
+<section id="demo" class="reveal">
+<h2>Interactive AI Demo</h2>
+<div style="text-align:center;">
+<input id="input" placeholder="Type something...">
+<button onclick="runAI()">Generate</button>
+<p id="output"></p>
+</div>
+</section>
 
-            <div class="photoshop-gallery" id="gallery-container">
-                <!-- Photoshop Projects -->
-                <div class="gallery-item" data-category="photoshop">
-                    <img src="images/indiana.jpg" alt="Indiana-inspired digital artwork – Photoshop creation featuring state elements and Bloomington vibes">
-                    <div class="item-info">
-                        <h4>2024-25 Indiana Hoosiers</h4>
-                        <p>T-Shirt design for the 2024-2025 basketball season. Made with Adobe Photoshop.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="photoshop">
-                    <img src="images/design-1.jpg" alt="Photoshop digital design 1">
-                    <div class="item-info">
-                        <h4>Design Project 1</h4>
-                        <p>Creative digital design work in Photoshop.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="photoshop">
-                    <img src="images/design-2.jpg" alt="Photoshop digital design 2">
-                    <div class="item-info">
-                        <h4>Design Project 2</h4>
-                        <p>Professional digital artwork created with Adobe Photoshop.</p>
-                    </div>
-                </div>
+<section id="contact" class="reveal">
+<h2>Contact</h2>
+<p style="text-align:center;">
+Email: jamesonncollinss@gmail.com
+</p>
+</section>
 
-                <!-- CAD Work -->
-                <div class="gallery-item" data-category="cad">
-                    <img src="images/cad-1.jpg" alt="CAD 3D modeling project 1">
-                    <div class="item-info">
-                        <h4>3D Model - Part Design</h4>
-                        <p>Precision engineering model created with SolidWorks/Fusion 360.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="cad">
-                    <img src="images/cad-2.jpg" alt="CAD 3D modeling project 2">
-                    <div class="item-info">
-                        <h4>Complex Assembly</h4>
-                        <p>Multi-component CAD assembly with technical drawings.</p>
-                    </div>
-                </div>
+<footer>
+<p>© 2026 Jameson Collins</p>
+</footer>
 
-                <!-- Data Analysis -->
-                <div class="gallery-item" data-category="data-analysis">
-                    <img src="images/data-analysis-1.jpg" alt="Data visualization dashboard">
-                    <div class="item-info">
-                        <h4>Interactive Data Dashboard</h4>
-                        <p>Python data analysis visualization with Matplotlib and Plotly.</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="data-analysis">
-                    <img src="images/data-analysis-2.jpg" alt="Statistical analysis report">
-                    <div class="item-info">
-                        <h4>Statistical Analysis Report</h4>
-                        <p>Data analysis project using pandas and statistical methods.</p>
-                    </div>
-                </div>
+<script>
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', () => {
+    reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+});
 
-                <!-- Illustration -->
-                <div class="gallery-item" data-category="illustration">
-                    <img src="images/illustration-1.jpg" alt="Digital illustration 1">
-                    <div class="item-info">
-                        <h4>Digital Illustration</h4>
-                        <p>Hand-drawn digital art created with digital painting software.</p>
-                    </div>
-                </div>
+// CURSOR GLOW
+const glow = document.querySelector('.cursor-glow');
+document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+});
 
-                <!-- Web Design -->
-                <div class="gallery-item" data-category="web-design">
-                    <img src="images/web-design-1.jpg" alt="Web UI design mockup">
-                    <div class="item-info">
-                        <h4>Website UI Design</h4>
-                        <p>Modern responsive web interface design and UX layout.</p>
-                    </div>
-                </div>
-
-                <!-- Photography -->
-                <div class="gallery-item" data-category="photography">
-                    <img src="images/photography-1.jpg" alt="Photography project 1">
-                    <div class="item-info">
-                        <h4>Photography Collection</h4>
-                        <p>Portfolio of photography work and visual storytelling.</p>
-                    </div>
-                </div>
-
-                <!-- Motion Graphics -->
-                <div class="gallery-item" data-category="motion">
-                    <img src="images/motion-1.jpg" alt="Motion graphics animation preview">
-                    <div class="item-info">
-                        <h4>Motion Graphics Animation</h4>
-                        <p>Animated graphics created with After Effects.</p>
-                    </div>
-                </div>
-
-                <!-- Branding -->
-                <div class="gallery-item" data-category="branding">
-                    <img src="images/branding-1.jpg" alt="Logo and brand identity design">
-                    <div class="item-info">
-                        <h4>Brand Identity Design</h4>
-                        <p>Logo design and complete branding system.</p>
-                    </div>
-                </div>
-
-                <!-- Infographics -->
-                <div class="gallery-item" data-category="infographics">
-                    <img src="images/infographic-1.jpg" alt="Data infographic visualization">
-                    <div class="item-info">
-                        <h4>Information Design</h4>
-                        <p>Complex data presented as compelling infographics.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Accomplishments -->
-    <section id="accomplishments">
-        <div class="container">
-            <h2>Accomplishments</h2>
-            <ul style="max-width: 800px; margin: 0 auto; font-size: 1.15rem; list-style: none;">
-                <li>• Dean's List / Scholarship Recipient – 2023, 2024, 2025, 2026</li>
-                <li>• ...</li>
-                <li>• ...</li>
-                <li>• ...</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" style="background: var(--bg-secondary);">
-        <div class="container" style="text-align: center;">
-            <h2 style="color: var(--text-primary);">Get in Touch</h2>
-            <p style="margin: 2rem 0; font-size: 1.2rem;">I'm open to opportunities, collaborations, or just interesting conversations.</p>
-            <a href="mailto:jamesonncollinss@gmail.com" class="btn">Email Me</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Jameson Collins. Built with passion using HTML & CSS.</p>
-            <div class="social-links" style="margin: 1.5rem 0;">
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/jameson" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/yourhandle" target="_blank">X / Twitter</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Smooth scrolling and Gallery Filtering -->
-    <script>
-        // Smooth scroll navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Gallery filtering functionality
-        const folderBtns = document.querySelectorAll('.folder-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        folderBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const selectedCategory = this.getAttribute('data-category');
-
-                // Update active button
-                folderBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-
-                // Filter gallery items
-                galleryItems.forEach(item => {
-                    if (selectedCategory === 'all') {
-                        item.classList.remove('hidden');
-                    } else {
-                        const itemCategory = item.getAttribute('data-category');
-                        if (itemCategory === selectedCategory) {
-                            item.classList.remove('hidden');
-                        } else {
-                            item.classList.add('hidden');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+// AI DEMO
+function runAI() {
+    let text = document.getElementById('input').value;
+    document.getElementById('output').innerText =
+        "AI Output: " + text.split("").reverse().join("");
+}
+</script>
 
 </body>
 </html>
