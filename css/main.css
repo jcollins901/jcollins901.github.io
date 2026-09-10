@@ -428,6 +428,17 @@ h2.section-title--spaced {
     margin-bottom: 0.2rem;
 }
 
+.cred-list ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.35rem;
+}
+
+.cred-list ul li {
+    padding: 0.2rem 0;
+    border-bottom: none;
+}
+
 .attest {
     text-align: center;
     font-size: 0.95rem;
